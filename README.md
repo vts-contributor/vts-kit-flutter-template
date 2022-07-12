@@ -51,7 +51,7 @@ Usage
 
 This Template Generated Code Structure base on MVC Pattern
 
-![Screenshot](readme_files/structure.PNG)
+![Screenshot](docs/readme_files/structure.PNG)
 
 #### Library references
 
@@ -191,7 +191,7 @@ Widget build(BuildContext context) {
 Sometimes, labels, column names need to be changed without change code. You can download a text file
 from server then use it with Flutter core.
 
-![Screenshot](readme_files/external_localization.png)
+![Screenshot](docs/readme_files/external_localization.png)
 
 * Must implement `Switch locale manually` app structure with `ExternalLocalizations.delegate`
   in `MaterialApp`
@@ -277,7 +277,7 @@ void downloadLanguageFile() async {
 }
 ```
 
-[language.zip](readme_files/languages.zip) sample
+[language.zip](docs/readme_files/languages.zip) sample
 
 * Using
 
@@ -322,9 +322,9 @@ flutter_core/extensions/extensions.dart'
 
 ### Handle different screens
 
-![Phone tablet](readme_files/sizes-phone-tablet.png)
+![Phone tablet](docs/readme_files/sizes-phone-tablet.png)
 
-* Add 'with [AdaptivePage](lib/difference_screens/mixin_adaptive_page.dart)' into State of Widget
+* Add 'with [AdaptivePage](docs/difference_screens/mixin_adaptive_page.dart)' into State of Widget
 
 ```dart
 class _LoginScreenState extends State<LoginScreen> with AdaptivePage {
@@ -364,7 +364,7 @@ class _LoginScreenState extends State<LoginScreen> with AdaptivePage {
 
 Here is a sequence diagram of action get data from API
 
-![call api sequence](readme_files/call_api_sequence.png)
+![call api sequence](docs/readme_files/call_api_sequence.png)
 
 #### Network
 
@@ -542,15 +542,15 @@ class _LoginScreenState extends State<LoginScreen> {
 * There 2 ways to return a status code in response:
 
 * http status code<br>
-  ![a](readme_files/response_status_code_default.png)
+  ![a](docs/readme_files/response_status_code_default.png)
 * in response body<br>
-  ![b](readme_files/response_status_code_in_body.png)
+  ![b](docs/readme_files/response_status_code_in_body.png)
 
 * In the first case, both server response error & default exception (SocketException,
   TimeoutException,...) are DioError. <br>
   (Dio always throw a DioError when response http status code is not success.)<br>
   Just call dioError.parseMultiLanguage(context) to show error message to user.<br>
-  ![c](readme_files/handle_error_when_server_response_http_status_code.png)<br>
+  ![c](docs/readme_files/handle_error_when_server_response_http_status_code.png)<br>
   Example:
 
 ```dart
@@ -621,7 +621,7 @@ class _LoginScreenState extends State<LoginScreen> {
 * In the remaining case, server response error inside response, it is not thrown as Exception and
   can not call .parseMultiLanguage(). So have to throw a Exception when receive a server response
   error in parse json function.<br>
-  ![d](readme_files/handle_error.png)<br>
+  ![d](docs/readme_files/handle_error.png)<br>
   
   Example:
 ```dart
@@ -696,7 +696,7 @@ Explanation for the use of ServerResponseError class, it allow to show server re
 
 #### Recap, the range of components above corresponds to the visual description below.
 
-![call_api_sequence_with_part](readme_files/call_api_sequence_with_part.png)
+![call_api_sequence_with_part](docs/readme_files/call_api_sequence_with_part.png)
 
 License
 -------
